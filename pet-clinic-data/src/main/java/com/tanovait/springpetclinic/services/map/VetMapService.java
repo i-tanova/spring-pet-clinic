@@ -3,10 +3,11 @@ package com.tanovait.springpetclinic.services.map;
 
 import com.tanovait.springpetclinic.model.Vet;
 import com.tanovait.springpetclinic.services.CrudService;
+import com.tanovait.springpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetMapService extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService{
     @Override
     public Vet findById(Long id) {
         return super.findById(id);
