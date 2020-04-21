@@ -3,9 +3,10 @@ package com.tanovait.springpetclinic.services.map;
 import com.tanovait.springpetclinic.model.Owner;
 import com.tanovait.springpetclinic.services.CrudService;
 import com.tanovait.springpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
     @Override
