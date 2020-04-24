@@ -26,4 +26,8 @@ public class Pet extends BaseEntity{
     public void setPetType(PetType petType) {
         this.petType = petType;
     }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 }
