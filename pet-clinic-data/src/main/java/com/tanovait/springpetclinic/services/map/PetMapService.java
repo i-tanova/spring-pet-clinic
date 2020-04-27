@@ -1,13 +1,13 @@
 package com.tanovait.springpetclinic.services.map;
 
 import com.tanovait.springpetclinic.model.Pet;
-import com.tanovait.springpetclinic.services.CrudService;
+import com.tanovait.springpetclinic.services.PetService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Pet findById(Long id) {
         return super.findById(id);
