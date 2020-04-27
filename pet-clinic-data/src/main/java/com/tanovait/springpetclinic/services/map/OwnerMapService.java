@@ -2,7 +2,6 @@ package com.tanovait.springpetclinic.services.map;
 
 import com.tanovait.springpetclinic.model.Owner;
 import com.tanovait.springpetclinic.model.Pet;
-import com.tanovait.springpetclinic.services.CrudService;
 import com.tanovait.springpetclinic.services.OwnerService;
 import com.tanovait.springpetclinic.services.PetService;
 import com.tanovait.springpetclinic.services.PetTypeService;
@@ -14,6 +13,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     private final PetTypeService petTypeService;
     private final PetService petService;
+
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
 
     @Override
     public Owner findById(Long id) {
