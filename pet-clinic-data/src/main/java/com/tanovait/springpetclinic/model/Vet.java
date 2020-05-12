@@ -1,13 +1,16 @@
 package com.tanovait.springpetclinic.model;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="vets")
 public class Vet extends Person {
+
+    public Vet(){
+        super();
+    }
 
     public Vet(String firstName, String lastName) {
         super(firstName, lastName);
