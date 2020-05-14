@@ -1,10 +1,7 @@
 package com.tanovait.springpetclinic.bootstrap;
 
 import com.tanovait.springpetclinic.model.*;
-import com.tanovait.springpetclinic.services.OwnerService;
-import com.tanovait.springpetclinic.services.PetTypeService;
-import com.tanovait.springpetclinic.services.SpecialityService;
-import com.tanovait.springpetclinic.services.VetService;
+import com.tanovait.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -98,5 +97,12 @@ public class DataLoader implements CommandLineRunner {
         vet1.getSpecialties().add(savedSurgery);
         vetService.save(vet1);
         System.out.println("Vet service 2 data saved");
+
+        Visit visit = new Visit();
+        visit.setDate(LocalDate.now());
+        visit.setPet(owner1Pet);
+        visit.setDescription("visit owner 1");
+        visitService.save(visit);
+        System.out.println("Visit saved");
     }
 }

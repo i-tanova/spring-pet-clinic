@@ -3,9 +3,11 @@ package com.tanovait.springpetclinic.services.map;
 import com.tanovait.springpetclinic.model.Vet;
 import com.tanovait.springpetclinic.model.Visit;
 import com.tanovait.springpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
