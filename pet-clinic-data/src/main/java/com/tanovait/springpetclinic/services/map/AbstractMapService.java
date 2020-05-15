@@ -1,8 +1,10 @@
 package com.tanovait.springpetclinic.services.map;
 
 import com.tanovait.springpetclinic.model.BaseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
+
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
